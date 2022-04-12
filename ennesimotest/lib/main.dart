@@ -6,22 +6,28 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final appTitle = 'Read Text File';
+    final appTitle = 'ListGenerator';
  
     return MaterialApp(
-      title: appTitle,
+     
       home: Scaffold(
         appBar: AppBar(
           foregroundColor: Color.fromARGB(255, 32, 75, 132),
-          title: Text(
-            appTitle,
-            style: TextStyle(fontFamily: 'Montserrat', fontStyle: FontStyle.normal), 
-            ),
-          centerTitle: true,
-          backgroundColor: Color.fromARGB(255, 11, 161, 242),
+           title: Text(appTitle),
+            
+           centerTitle: true,
+           backgroundColor: Color.fromARGB(255, 11, 161, 242),
         ),
-        body: const ReadTextFile(),
-        
+        body: Column(children: const[
+          Expanded(
+              flex: 1, 
+              child:  SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child:   ReadTextFile(),
+              )
+            ),
+          ], 
+        )  , //child: 
       ),
     );
   }
