@@ -1,9 +1,8 @@
-import 'dart:ui';
-
+import 'package:chat/home.dart';
 import 'package:chat/intro/comuiemu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,6 +40,7 @@ class ChatApp extends StatefulWidget {
 class _ChatAppState extends State<ChatApp> {
   @override
   Widget build(BuildContext context) {
-    return const ComuIemu(); //First intro screen
+    // return const AuthenticationForm(); //First intro screen
+    return Home();
   }
 }

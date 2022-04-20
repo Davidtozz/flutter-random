@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter/services.dart';
-
+import 'package:flutter/material.dart';
+import 'package:chat/components/button.dart';
+import 'package:chat/components/chakratext.dart';
 
 class ComuIemu extends StatelessWidget {
   const ComuIemu({Key? key}) : super(key: key);
@@ -10,70 +10,49 @@ class ComuIemu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Container(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              "Au mbare,",
+      
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ChakraText(data: 'Au mbare,', //Text widget with Chrakra Petch font already applied
+              fontSize: 40, 
               style: TextStyle(
                   shadows: <Shadow>[
                     Shadow(
-                        color: Colors.black.withOpacity(0.4),
-                        offset: const Offset(0, 1),
-                        blurRadius: 3),
-                  ],
-                  fontFamily: 'ChakraPetch',
-                  fontSize: 40,
-                  fontStyle: FontStyle.normal),
-            ),
+                      color: Colors.black.withOpacity(0.4),
+                      offset: const Offset(0, 1),
+                      blurRadius: 3),
+                    ],
+                fontFamily: 'ChakraPetch',
+                fontSize: 40,
+                fontStyle: FontStyle.normal),
+              ),
             const SizedBox(height: 53),
             SvgPicture.asset('assets/images/trinacria.svg'),
             const SizedBox(height: 53),
-            Text(
-              "Comu iemu",
+             ChakraText(data: "Comu iemu", fontSize: 40,
               style: TextStyle(
-                  fontFamily: 'ChakraPetch',
-                  fontSize: 40,
-                  fontStyle: FontStyle.normal,
-                  shadows: <Shadow>[
-                    Shadow(
-                        color: Colors.black.withOpacity(0.4),
-                        offset: const Offset(0, 1),
-                        blurRadius: 3),
-                  ]),
-            ),
-            const SizedBox(height: 47),
-            TextButton(
-              onPressed: null,
-              style: ButtonStyle(
-                padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(10)),
-                shape: MaterialStateProperty
-                .all<RoundedRectangleBorder>
-                (RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                  side: BorderSide(color: Color.fromARGB(255, 0, 0, 0)))),
-                  
-                  backgroundColor: MaterialStateColor.resolveWith((states) =>Color.fromARGB(97, 90, 178, 255))), //pagina successiva, coming soon
-              child: Text(
-                "Fozza Accuminciamu",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    shadows: <Shadow>[
-                      Shadow(
-                          color: Colors.black.withOpacity(0.4),
-                          offset: Offset(0, 1),
-                          blurRadius: 3),
-                    ],
-                    fontFamily: 'ChakraPetch',
-                    fontWeight: FontWeight.normal,
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontSize: 24),
+                fontFamily: 'ChakraPetch',
+                fontStyle: FontStyle.normal,
+                shadows: <Shadow>[
+                  Shadow(
+                    color: Colors.black.withOpacity(0.4),
+                    offset: const Offset(0, 1),
+                    blurRadius: 3
+                  ),
+                ],
               ),
-            )
-          ],
-        )),
+            ),
+            const SizedBox(height: 73),
+               Button(label: 'Fozza Accuminciamu', onPressed: () {
+                Navigator.pushNamed(context, '/auth');
+              }),
+               
+
+            ],
+          )
+      
       ),
     );
   }
