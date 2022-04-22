@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class name extends StatefulWidget {
-  name({Key? key}) : super(key: key);
+class Birdie extends StatefulWidget {
+  Birdie({Key? key}) : super(key: key);
 
   @override
-  State<name> createState() => _nameState();
+  State<Birdie> createState() => _BirdieState();
 }
 
-class _nameState extends State<name> {
+class _BirdieState extends State<Birdie> {
   @override
   Widget build(BuildContext context) {
     return Container();
