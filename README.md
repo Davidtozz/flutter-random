@@ -1,2 +1,3 @@
-# Cross-platform Flutter apps 
-Collection of flutter apps made during my Flutter learning journey. 
+# Random Flutter apps 
+
+Collection of my starter Flutter apps
